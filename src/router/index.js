@@ -4,7 +4,10 @@ import Index from '@/components/index'
 
 import Home from '@/components/pages/home/home'
 import ProductIndex from '@/components/pages/product/index'
+import Cart from '@/components/pages/cart/index'
 import MyIndex from '@/components/pages/my/index'
+import CustomerInfoForm from '@/components/pages/my/component/customerInfoForm'
+import SetBirth from '@/components/pages/my/component/setBirth'
 
 Vue.use(Router)
 
@@ -25,8 +28,20 @@ export default new Router({
           component: ProductIndex
         },
         {
+          path:'cart',
+          component: Cart
+        },
+        {
           path:'my',
           component: MyIndex
+        },
+        {
+          path: 'customerinfo',
+          component: CustomerInfoForm
+        },
+        {
+          path: 'setbirth',
+          component: SetBirth
         }
       ]
     },

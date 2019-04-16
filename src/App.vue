@@ -8,7 +8,7 @@
 export default {
   name: 'App',
   created() {
-    window.localStorage.clear()
+    // window.localStorage.clear()
   }
 }
 </script>
@@ -19,9 +19,22 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  background-color: #f9f9f9;
+  height: 100vh;
 }
 html , body{
   margin: 0;
   padding: 0;
+}
+.line{
+  height: 1px;
+  background-color: #f9f9f9;
+  width: 100%;
+}
+.float-bottom-btn{
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 100px;
 }
 </style>

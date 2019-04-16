@@ -7,16 +7,28 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import store from './store/store'
 // mint-ui
-import MintUI from 'mint-ui'
-import 'mint-ui/lib/style.css'
+import Vant from 'vant';
+import 'vant/lib/index.css';
+
+Vue.use(Vant);
 
 // rem 布局css
 // import '@/assets/css/media.css'
 
 Vue.use(VueAxios, axios)
-Vue.use(MintUI)
 
 Vue.config.productionTip = false
+
+// 拦截器
+axios.interceptors.request.use((config) => {
+  // 判断是否是获取userInfo接口
+  if(config.url.indexOf('wechatlogin') == -1){
+    config['headers']['Authorization'] = window.localStorage.getItem('token') || '';
+  }
+  return config
+} , (error) => {
+  return Promise.reject(error)
+})
 
 /* eslint-disable no-new */
 new Vue({

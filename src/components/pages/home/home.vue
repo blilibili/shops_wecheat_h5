@@ -1,9 +1,9 @@
 <template>
     <div>
-      <mt-header title="医疗美容商城">
-        <mt-button v-if="nickname == ''" size="small" slot="right" type="default" @click="loginHandler">登录</mt-button>
-        <mt-button v-else size="small" slot="right" type="default">{{nickname}}</mt-button>
-      </mt-header>
+      <van-nav-bar
+        left-text="医疗美容商城"
+        :right-text="nickname == ''? '登录' : nickname"
+      />
 
       <div class="container-box">
         <div style="margin: 20px 0;font-size: 22px;">新品推荐</div>
@@ -24,28 +24,40 @@
       </div>
 
       <div class="plus-button">
-        <mt-palette-button content="+" @expand="main_log('expand')" @expanded="main_log('expanded')" @collapse="main_log('collapse')"
-                           direction="rt" class="pb" :radius="80" ref="target_1" mainButtonStyle="color:#fff;background-color:#26a2ff;"
-                           style="left:30px;">
-          <div class="my-icon-button indexicon icon-popup" @touchstart="sub_log(1)"></div>
-          <div class="my-icon-button indexicon icon-popup" @touchstart="sub_log(2)"></div>
-          <div class="my-icon-button indexicon icon-popup" @touchstart="sub_log(3)"></div>
-        </mt-palette-button>
+
       </div>
+
+      <van-dialog
+        v-model="isShowBindMobile"
+        title="绑定手机"
+        show-cancel-button
+        @confirm="submitMobile"
+      >
+        <div>
+          <van-field v-model="formData.mobile" placeholder="请输入手机号" />
+        </div>
+      </van-dialog>
     </div>
 </template>
 
 <script>
     import {GetUrlParam} from '@/util/util'
-    import {requestGetUserInfo} from '@/api/getUserInfo'
-    import { Indicator } from 'mint-ui';
+    import {requestGetUserInfo} from '@/api/users/getUserInfo'
+    import { Toast } from 'vant';
     import store from '@/store/store'
+    import bindMobile from './bindMobile'
+    import {requestSetPhone} from '@/api/users/setPhone'
     export default {
         name: "home",
         data(){
           return {
             code:'',
-            nickname: ''
+            nickname: '',
+            isShowBindMobile: false,
+            formData:{
+              mobile:'',
+              code:'123456'
+            }
           }
         },
 
@@ -53,37 +65,59 @@
           if(window.localStorage.getItem('nickname') == '' || window.localStorage.getItem('nickname') == undefined){
             this.getMyCode();
             if(GetUrlParam('code')){
-              Indicator.open({
-                text: '加载中...',
-                spinnerType: 'snake'
+              Toast.loading({
+                mask: true,
+                message: '加载中...',
+                duration:0
               });
               let data = {
                 code: this.code
               };
-              console.log(1);
-              requestGetUserInfo(data , this).then((res) => {
-                console.log(res.data);
-                Indicator.close();
 
+              requestGetUserInfo(data , this).then((res) => {
+
+                Toast.clear();
                 window.localStorage.setItem('nickname' , res.data.data.nickname);
+                window.localStorage.setItem('token' , 'Bearer ' + res.data.data.token);
                 this.nickname = res.data.data.nickname;
+                if(res.data.data.mobile == null){
+                  this.isShowBindMobile = true;
+                  window.localStorage.setItem('isBindPhone' , '0');
+                }else{
+                  window.localStorage.setItem('isBindPhone' , '1');
+                }
                 //store.dispatch('setUserNickname' , res.data.data.nickname);
               })
             }else{
               this.loginHandler()
             }
           }else{
+            if(window.localStorage.getItem('isBindPhone') == '0'){
+              this.isShowBindMobile = true;
+            }
             this.nickname = window.localStorage.getItem('nickname')
           }
         },
         methods:{
           loginHandler(){
-            let redirect = 'o1967s9517.iok.la'
+            let redirect = 'weishao.natapp1.cc';
             window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx291b9c4a172880af&redirect_uri=http%3A%2F%2F'+ redirect +'%2F%23%2Fhome&response_type=code&scope=snsapi_userinfo&state=wsy#wechat_redirect';
           },
           getMyCode(){
             this.code = GetUrlParam('code');
+          },
+          submitMobile(){
+            requestSetPhone(this.formData , this).then((res) => {
+              if(res.data.state == 200){
+                window.localStorage.setItem('isBindPhone' , '1');
+              }else{
+                Toast(res.data.msg);
+              }
+            })
           }
+        },
+        components:{
+          bindMobile
         }
     }
 </script>

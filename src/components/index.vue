@@ -3,24 +3,16 @@
       <router-view/>
 
       <div class="menu-controller">
-        <mt-tabbar v-model="selected">
-          <mt-tab-item id="home">
-            <img slot="icon" src="../assets/logo.png">
-            首页
-          </mt-tab-item>
-          <mt-tab-item id="product">
-            <img slot="icon" src="../assets/logo.png">
-            商品
-          </mt-tab-item>
-          <mt-tab-item id="功能2">
-            <img slot="icon" src="../assets/logo.png">
-            功能2
-          </mt-tab-item>
-          <mt-tab-item id="my">
-            <img slot="icon" src="../assets/logo.png">
-            我的
-          </mt-tab-item>
-        </mt-tabbar>
+
+        <van-tabbar
+          v-model="active"
+          active-color="#07c160"
+        >
+          <van-tabbar-item icon="wap-home" to="/home">首页</van-tabbar-item>
+          <van-tabbar-item icon="hot-sale-o" to="/product">商品</van-tabbar-item>
+          <van-tabbar-item icon="shopping-cart-o" to="/cart">购物车</van-tabbar-item>
+          <van-tabbar-item icon="contact" to="/my">我的</van-tabbar-item>
+        </van-tabbar>
       </div>
     </div>
 </template>
@@ -30,6 +22,7 @@
         name: "index",
         data(){
           return {
+            active:0,
             selected:'home'
           }
         },
