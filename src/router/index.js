@@ -9,6 +9,9 @@ import MyIndex from '@/components/pages/my/index'
 import CustomerInfoForm from '@/components/pages/my/component/customerInfoForm'
 import SetBirth from '@/components/pages/my/component/setBirth'
 
+import NoNavIndex from '@/components/noNavIndex'
+import AddressList from '@/components/pages/my/address/list'
+
 Vue.use(Router)
 
 export default new Router({
@@ -42,6 +45,18 @@ export default new Router({
         {
           path: 'setbirth',
           component: SetBirth
+        }
+      ]
+    },
+    {
+      path: '/',
+      name: 'NoNavIndex',
+      component: NoNavIndex,
+      redirect:'/home',
+      children:[
+        {
+          path: 'address/list',
+          component: AddressList
         }
       ]
     },

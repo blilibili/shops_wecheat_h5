@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="height: 100vh;overflow: auto;">
       <div>
         <van-nav-bar
           title="我的"
@@ -70,7 +70,18 @@
         </div>
       </div>
 
-      <div class="float-bottom-btn">
+      <div class="line"></div>
+
+      <div class="row-controller" @click="goToMyAddress">
+        <div class="block">
+          我的收货地址
+        </div>
+        <div>
+          <img src="../../../assets/right-arrow.png" style="height: 20px;width: 20px;" alt="">
+        </div>
+      </div>
+
+      <div style="margin-top: 20px;width: 100%;text-align: center;padding-bottom: 60px;">
         <van-button hairline type="default" @click="goToUpdateInfo">去完善信息</van-button>
       </div>
 
@@ -99,6 +110,9 @@
           },
           goToUpdateInfo(){
             this.$router.push('/customerinfo')
+          },
+          goToMyAddress(){
+            this.$router.push('/address/list');
           }
         }
     }

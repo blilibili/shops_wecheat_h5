@@ -86,6 +86,7 @@
                 }else{
                   window.localStorage.setItem('isBindPhone' , '1');
                 }
+                window.location.href = '/';
                 //store.dispatch('setUserNickname' , res.data.data.nickname);
               })
             }else{
