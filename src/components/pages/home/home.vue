@@ -8,7 +8,7 @@
       <div class="container-box">
         <div style="margin: 20px 0;font-size: 22px;">新品推荐</div>
         <div class="img-controller">
-          <img src="@/assets/01.jpg" alt="">
+          <img src="@/assets/01.jpg" alt="" @click="goToProductInfo('1')">
           <img src="@/assets/02.jpg" alt="">
           <img src="@/assets/03.jpg" alt="">
         </div>
@@ -115,6 +115,9 @@
                 Toast(res.data.msg);
               }
             })
+          },
+          goToProductInfo(proId){
+            this.$router.push('/product/info?proId=' + proId)
           }
         },
         components:{

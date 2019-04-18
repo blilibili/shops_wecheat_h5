@@ -32,8 +32,8 @@
               <div class="address-label">
                 <div>操作:</div>
                 <div>
-                  <van-button hairline type="default" @click="updateMyAddress(item.address_id)">修改地址</van-button>
-                  <van-button hairline type="default" @click="delMyAddress(item.address_id)">删除地址</van-button>
+                  <van-button hairline size="small" type="default" @click="updateMyAddress(item.address_id)">修改地址</van-button>
+                  <van-button hairline size="small" type="default" @click="delMyAddress(item.address_id)">删除地址</van-button>
                 </div>
               </div>
 

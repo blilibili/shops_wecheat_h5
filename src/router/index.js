@@ -12,6 +12,8 @@ import SetBirth from '@/components/pages/my/component/setBirth'
 import NoNavIndex from '@/components/noNavIndex'
 import AddressList from '@/components/pages/my/address/list'
 
+import ProductInfo from '@/components/pages/product/info'
+
 Vue.use(Router)
 
 export default new Router({
@@ -45,6 +47,10 @@ export default new Router({
         {
           path: 'setbirth',
           component: SetBirth
+        },
+        {
+          path:'product/info',
+          component: ProductInfo
         }
       ]
     },

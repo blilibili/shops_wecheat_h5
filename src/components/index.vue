@@ -28,7 +28,7 @@
         },
         watch:{
           'selected'(){
-            this.$router.replace('/' + this.selected)
+            this.active = '-'
           }
         }
     }
