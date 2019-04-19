@@ -81,6 +81,17 @@
         </div>
       </div>
 
+      <div class="line"></div>
+
+      <div class="row-controller" @click="goToMyOrder">
+        <div class="block">
+          我的订单
+        </div>
+        <div>
+          <img src="../../../assets/right-arrow.png" style="height: 20px;width: 20px;" alt="">
+        </div>
+      </div>
+
       <div style="margin-top: 20px;width: 100%;text-align: center;padding-bottom: 60px;">
         <van-button hairline type="default" @click="goToUpdateInfo">去完善信息</van-button>
       </div>
@@ -113,6 +124,9 @@
           },
           goToMyAddress(){
             this.$router.push('/address/list');
+          },
+          goToMyOrder(){
+            this.$router.push('/order/list');
           }
         }
     }

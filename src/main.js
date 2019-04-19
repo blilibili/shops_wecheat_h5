@@ -9,6 +9,7 @@ import store from './store/store'
 // mint-ui
 import Vant from 'vant';
 import 'vant/lib/index.css';
+import { Toast } from 'vant';
 
 Vue.use(Vant);
 
@@ -18,7 +19,7 @@ Vue.use(Vant);
 Vue.use(VueAxios, axios)
 
 Vue.config.productionTip = false
-
+Vue.$toast = Toast
 // 拦截器
 axios.interceptors.request.use((config) => {
   console.log(config)

@@ -14,6 +14,8 @@ import AddressList from '@/components/pages/my/address/list'
 
 import ProductInfo from '@/components/pages/product/info'
 
+import MyOrderList from '@/components/pages/order/index'
+
 Vue.use(Router)
 
 export default new Router({
@@ -47,10 +49,6 @@ export default new Router({
         {
           path: 'setbirth',
           component: SetBirth
-        },
-        {
-          path:'product/info',
-          component: ProductInfo
         }
       ]
     },
@@ -63,6 +61,14 @@ export default new Router({
         {
           path: 'address/list',
           component: AddressList
+        },
+        {
+          path:'product/info',
+          component: ProductInfo
+        },
+        {
+          path:'order/list',
+          component: MyOrderList
         }
       ]
     },

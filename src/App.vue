@@ -20,7 +20,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   background-color: #f9f9f9;
-  height: 100vh;
+  /*height: 100vh;*/
 }
 html , body{
   margin: 0;
