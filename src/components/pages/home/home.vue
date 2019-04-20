@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="home-page">
       <van-nav-bar
         left-text="医疗美容商城"
         :right-text="nickname == ''? '登录' : nickname"
@@ -8,18 +8,30 @@
       <div class="container-box">
         <div style="margin: 20px 0;font-size: 22px;">新品推荐</div>
         <div class="img-controller">
-          <img src="@/assets/01.jpg" alt="" @click="goToProductInfo('1')">
-          <img src="@/assets/02.jpg" alt="">
-          <img src="@/assets/03.jpg" alt="">
+          <div style="background-color: #4f4f4f;">
+            <img style="opacity: 0.9;" src="@/assets/01.jpg" alt="" @click="goToProductInfo('1')">
+          </div>
+          <div style="background-color: #4f4f4f;">
+            <img style="opacity: 0.9;" src="@/assets/02.jpg" alt="" @click="goToProductInfo('1')">
+          </div>
+          <div style="background-color: #4f4f4f;">
+            <img style="opacity: 0.9;" src="@/assets/03.jpg" alt="" @click="goToProductInfo('1')">
+          </div>
         </div>
       </div>
 
       <div class="container-box">
         <div style="margin: 20px 0;font-size: 22px;">为你推荐</div>
         <div class="img-controller">
-          <img src="@/assets/01.jpg" alt="">
-          <img src="@/assets/02.jpg" alt="">
-          <img src="@/assets/03.jpg" alt="">
+          <div style="background-color: #4f4f4f;">
+            <img style="opacity: 0.9;" src="@/assets/01.jpg" alt="" @click="goToProductInfo('1')">
+          </div>
+          <div style="background-color: #4f4f4f;">
+            <img style="opacity: 0.9;" src="@/assets/02.jpg" alt="" @click="goToProductInfo('1')">
+          </div>
+          <div style="background-color: #4f4f4f;">
+            <img style="opacity: 0.9;" src="@/assets/03.jpg" alt="" @click="goToProductInfo('1')">
+          </div>
         </div>
       </div>
 
@@ -127,14 +139,22 @@
 </script>
 
 <style scoped lang="scss">
+    .home-page{
+      height: 100vh;
+    }
     .container-box{
       text-align: center;
       .img-controller{
         display: flex;
         justify-content: space-between;
-        img{
+        padding: 10px;
+        div{
           width: 100px;
           height: 100px;
+          img{
+            width: 100px;
+            height: 100px;
+          }
         }
       }
     }

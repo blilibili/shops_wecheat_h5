@@ -36,7 +36,7 @@
         <van-goods-action-big-btn
           primary
           text="立即购买"
-          @click="createOrder"
+          @click="goToConfirmProduct"
         />
       </van-goods-action>
     </div>
@@ -46,6 +46,7 @@
     import {requestGetProductInfoById} from '@/api/product/getProductInfoById'
     import {requestCreateProOrder} from '@/api/product/createProOrder'
     import {requestAddToCart} from '@/api/cart/addToCart'
+    import {postCallBack} from '@/util/util'
     export default {
         name: "info",
         data(){
@@ -84,15 +85,13 @@
               amount:this.count
             };
             requestAddToCart(postData , this).then((res) => {
-              if(res.data.state == 200){
-                this.$toast(res.data.msg)
-                this.$router.replace('/home')
-              }else{
-                this.$toast(res.data.msg)
-              }
+              postCallBack(res.data , this)
             })
           },
-          goToMyCart(){}
+          goToMyCart(){},
+          goToConfirmProduct(){
+            this.$router.replace('/product/confirm?productId=' + this.proObj.product_id + '&amount=' + this.count + '&name=' + this.proObj.product_name + '&price=' + this.proObj.product_price + '&desc=' + this.proObj.describe + '&seller=' + this.proObj.seller.seller_name)
+          }
         }
     }
 </script>

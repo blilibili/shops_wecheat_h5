@@ -8,13 +8,11 @@ import Cart from '@/components/pages/cart/index'
 import MyIndex from '@/components/pages/my/index'
 import CustomerInfoForm from '@/components/pages/my/component/customerInfoForm'
 import SetBirth from '@/components/pages/my/component/setBirth'
-
 import NoNavIndex from '@/components/noNavIndex'
 import AddressList from '@/components/pages/my/address/list'
-
 import ProductInfo from '@/components/pages/product/info'
-
 import MyOrderList from '@/components/pages/order/index'
+import ConfirmProduct from '@/components/pages/product/confirm'
 
 Vue.use(Router)
 
@@ -65,6 +63,10 @@ export default new Router({
         {
           path:'product/info',
           component: ProductInfo
+        },
+        {
+          path:'product/confirm',
+          component: ConfirmProduct
         },
         {
           path:'order/list',

@@ -46,3 +46,18 @@ export function formatDateTime(inputTime , methods) {
       break;
   }
 }
+
+/*
+  post提交统一处理方法 obj: 返回的对象 context: 上下文对象 url: 成功跳转的路由 不设置回到主页
+ */
+export function postCallBack(obj , context , url='/home') {
+  return new Promise((resolve , reject) => {
+    if(obj.state == 200){
+      context.$toast(obj.msg)
+      context.$router.replace(url)
+      resolve(true)
+    }else{
+      context.$toast(obj.msg);
+    }
+  })
+}

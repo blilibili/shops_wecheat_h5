@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="address-list-page">
       <div v-if="!isShowAddressForm">
         <div v-if="addressList.total != 0">
           <van-collapse v-model="actives">
@@ -32,6 +32,7 @@
               <div class="address-label">
                 <div>操作:</div>
                 <div>
+                  <van-button hairline size="small" type="default" @click="setMyDefaultAddress(item.address_id)">设置为默认地址</van-button>
                   <van-button hairline size="small" type="default" @click="updateMyAddress(item.address_id)">修改地址</van-button>
                   <van-button hairline size="small" type="default" @click="delMyAddress(item.address_id)">删除地址</van-button>
                 </div>
@@ -63,10 +64,12 @@
 <script>
     import {requestGetAddressList} from '@/api/users/getAddressList'
     import {requestSetUserAddress} from '@/api/users/setUserAddress'
+    import {requestSetDefaultAddress} from '@/api/users/setDefaultAddress'
     import {requestGetAddressInfoById} from '@/api/users/getAddressInfoById'
     import {requestGetDelDressInfoById} from '@/api/users/delAddressInfoById'
     import { Toast } from 'vant';
     import AddressForm from './addressForm'
+    import {postCallBack} from '@/util/util'
     export default {
         name: "list",
         data(){
@@ -85,6 +88,14 @@
           this.getAddressList();
         },
         methods:{
+          setMyDefaultAddress(id){
+            let postData = {
+              address_id: id
+            }
+            requestSetDefaultAddress(postData , this).then((res) => {
+              postCallBack(res.data , this)
+            })
+          },
           delMyAddress(id){
             let data = {
               address_id: id
@@ -141,6 +152,10 @@
 </script>
 
 <style scoped lang="scss">
+  .address-list-page{
+    height: 100vh;
+    overflow: auto;
+  }
   .row-controller{
     display: flex;
     justify-content: space-between;

@@ -14,6 +14,13 @@ export default {
 </script>
 
 <style>
+.default-word{
+  font-size: 14px;
+}
+.info-word{
+  color: #e3e3e3;
+  font-size: 13px;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

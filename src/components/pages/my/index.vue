@@ -1,9 +1,9 @@
 <template>
     <div style="height: 100vh;overflow: auto;">
       <div>
-        <van-nav-bar
-          title="我的"
-        />
+<!--        <van-nav-bar-->
+<!--          title="我的"-->
+<!--        />-->
       </div>
 
       <div class="row-controller">
