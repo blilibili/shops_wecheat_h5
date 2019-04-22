@@ -20,9 +20,9 @@ Vue.use(VueAxios, axios)
 
 Vue.config.productionTip = false
 Vue.$toast = Toast
+Vue.$store = store
 // 拦截器
 axios.interceptors.request.use((config) => {
-  console.log(config)
   // 判断是否是获取userInfo接口
   if(config.url.indexOf('wechatlogin') == -1){
     config['headers']['Authorization'] = window.localStorage.getItem('token') || '';

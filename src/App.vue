@@ -5,12 +5,18 @@
 </template>
 
 <script>
-export default {
-  name: 'App',
-  created() {
-    // window.localStorage.clear()
+  import router from './router'
+  export default {
+    name: 'App',
+    created() {
+      // window.localStorage.clear()
+      router.beforeEach((to, from, next) => {
+        this.$store.dispatch('Users/setCurrentRouter'  , to.path)
+        next()
+        // 这样当从一个普通页面A进入待监听组件时，在待监听组件中按返回键时能正常进入A
+      })
+    }
   }
-}
 </script>
 
 <style>

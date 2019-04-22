@@ -1,15 +1,22 @@
 const state = {
-  nickname:''
+  nickname:'',
+  router:''
 };
 const actions = {
   setUserNickname(context , param){
     context.commit('setNickNameCommit' , param);
+  },
+  setCurrentRouter(context , router){
+    context.commit('setRouterCommit' , router);
   }
 };
 
 const mutations = {
   setNickNameCommit(state , val){
     state.nickname = val;
+  },
+  setRouterCommit(state , val){
+    state.router = val;
   }
 }
 
