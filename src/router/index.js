@@ -3,16 +3,16 @@ import Router from 'vue-router'
 import Index from '@/page/index'
 
 import Home from '@/page/pages/home/home'
-import ProductIndex from '@/page/pages/product/index'
-import Cart from '@/page/pages/cart/index'
+import NewsIndex from '@/page/pages/news/index'
+import Service from '@/page/pages/service/index'
 import MyIndex from '@/page/pages/my/index'
 import CustomerInfoForm from '@/page/pages/my/component/customerInfoForm'
 import SetBirth from '@/page/pages/my/component/setBirth'
 import NoNavIndex from '@/page/noNavIndex'
 import AddressList from '@/page/pages/my/address/list'
-import ProductInfo from '@/page/pages/product/info'
+import ProductInfo from '@/page/pages/news/info'
 import MyOrderList from '@/page/pages/order/index'
-import ConfirmProduct from '@/page/pages/product/confirm'
+import ConfirmProduct from '@/page/pages/news/confirm'
 
 Vue.use(Router)
 
@@ -29,12 +29,12 @@ export default new Router({
           component: Home
         },
         {
-          path:'product',
-          component: ProductIndex
+          path:'news',
+          component: NewsIndex
         },
         {
-          path:'cart',
-          component: Cart
+          path:'service',
+          component: Service
         },
         {
           path:'my',

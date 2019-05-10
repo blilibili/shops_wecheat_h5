@@ -6,12 +6,18 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import store from './store/store'
-// mint-ui
+
 import Vant from 'vant';
 import 'vant/lib/index.css';
 import { Toast } from 'vant';
 
 Vue.use(Vant);
+
+// 懒加载
+import { Lazyload } from 'vant';
+
+// options 为可选参数，无则不传
+Vue.use(Lazyload, {});
 
 // rem 布局css
 // import '@/assets/css/media.css'

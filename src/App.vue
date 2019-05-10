@@ -32,7 +32,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  background-color: #f9f9f9;
+  /*background-color: #f9f9f9;*/
   /*height: 100vh;*/
 }
 html , body{
@@ -41,7 +41,7 @@ html , body{
 }
 .line{
   height: 1px;
-  background-color: #f9f9f9;
+  background-color: rgb(153,153,153);
   width: 100%;
 }
 .float-bottom-btn{
@@ -50,4 +50,9 @@ html , body{
   position: fixed;
   bottom: 100px;
 }
+  .bg-label{
+    padding: 5px;
+    background-color: #969799;
+    color: white;
+  }
 </style>
