@@ -5,7 +5,7 @@
       <div>
         <van-tabs>
           <van-tab title="热点">
-            <div class="article-box">
+            <div class="article-box" @click="goToNewsInfo">
               <div class="img">
                 <img src="../../../assets/01.jpg" alt="">
               </div>
@@ -120,6 +120,9 @@
           },
           goToGoodsInfo(goodsId){
             this.$router.push('/product/info?proId=' + goodsId)
+          },
+          goToNewsInfo(){
+            this.$router.push('/news/info/1')
           }
         }
     }

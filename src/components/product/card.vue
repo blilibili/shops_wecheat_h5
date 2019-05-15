@@ -43,7 +43,7 @@
     background-color: white;
     width: 90%;
     margin: 0 auto;
-    border-radius: 6px;
+    border-radius: 16px;
     .seller-name{
       display: flex;
       .icon-label{
@@ -59,17 +59,15 @@
       justify-content: space-between;
       position: relative;
       .product-img{
-        width: 45%;
+        width: 30%;
         background-color: #4f4f4f;
-        height: 150px;
         img{
           opacity: .9;
           width: 100%;
-          height: 150px;
         }
       }
       .product-info{
-        width: 45%;
+        width: 66%;
         .count{
           position: absolute;
           bottom: 0;

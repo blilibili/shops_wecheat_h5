@@ -24,14 +24,15 @@
   font-size: 14px;
 }
 .info-word{
-  color: #e3e3e3;
-  font-size: 13px;
+  color: rgb(163,163,163);
+  font-size: 12px;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  font-size: 14px;
   /*background-color: #f9f9f9;*/
   /*height: 100vh;*/
 }

@@ -78,7 +78,7 @@
       </div>
 
 
-      <div class="nav-controller">
+      <div class="nav-controller" style="margin-top: 10px;">
         <div class="left">
           <div>
             <img style="width: 50px;height: 50px;" src="../../../assets/test-ui.png" alt="">
@@ -86,121 +86,182 @@
           <div>我的预约</div>
         </div>
         <div class="right">
-          <img src="../../../assets/left-arrow.png" style="width: 5px;height: 10px;" alt="">
+          <img src="../../../assets/left-arrow.png" alt="">
         </div>
       </div>
 
-      <div class="row-controller">
-        <div class="block">
-          头像:
+      <div class="nav-controller" style="margin-top: 10px;">
+        <div class="left">
+          <div>
+            <img style="width: 50px;height: 50px;" src="../../../assets/test-ui.png" alt="">
+          </div>
+          <div>我的分享</div>
         </div>
-        <div>
-          <img :src="myAva" alt="" style="width: 50px;height: 50px;">
-        </div>
-      </div>
-
-      <div class="line"></div>
-
-      <div class="row-controller">
-        <div class="block">
-          中文名:
-        </div>
-        <div>
-          {{nickname}}
+        <div class="right">
+          <img src="../../../assets/left-arrow.png" alt="">
         </div>
       </div>
 
-      <div class="line"></div>
-
-      <div class="row-controller">
-        <div class="block">
-          英文名:
+      <div class="nav-controller" style="margin-top: 10px;">
+        <div class="left">
+          <div>
+            <img style="width: 50px;height: 50px;" src="../../../assets/test-ui.png" alt="">
+          </div>
+          <div>我的评价</div>
         </div>
-        <div>
-          {{name_en}}
-        </div>
-      </div>
-
-      <div class="line"></div>
-
-      <div class="row-controller">
-        <div class="block">
-          性别:
-        </div>
-        <div>
-          {{sex == 0 ? '男' : '女'}}
+        <div class="right">
+          <img src="../../../assets/left-arrow.png" alt="">
         </div>
       </div>
 
-      <div class="line"></div>
+      <div class="nav-controller">
+        <div class="left">
+          <div>
+            <img style="width: 50px;height: 50px;" src="../../../assets/test-ui.png" alt="">
+          </div>
+          <div>意见反馈</div>
+        </div>
+        <div class="right">
+          <img src="../../../assets/left-arrow.png" alt="">
+        </div>
+      </div>
+
+      <div class="nav-controller">
+        <div class="left">
+          <div>
+            <img style="width: 50px;height: 50px;" src="../../../assets/test-ui.png" alt="">
+          </div>
+          <div>联系客户</div>
+        </div>
+        <div class="right">
+          <img src="../../../assets/left-arrow.png" alt="">
+        </div>
+      </div>
+
+      <div class="nav-controller" style="margin-bottom: 60px;">
+        <div class="left">
+          <div>
+            <img style="width: 50px;height: 50px;" src="../../../assets/test-ui.png" alt="">
+          </div>
+          <div>邀请好友</div>
+        </div>
+        <div class="right">
+          <span>得奖励</span>
+          <img src="../../../assets/left-arrow.png" alt="">
+        </div>
+      </div>
 
 <!--      <div class="row-controller">-->
 <!--        <div class="block">-->
-<!--          年龄:-->
+<!--          头像:-->
 <!--        </div>-->
 <!--        <div>-->
-<!--          {{years}}-->
+<!--          <img :src="myAva" alt="" style="width: 50px;height: 50px;">-->
 <!--        </div>-->
 <!--      </div>-->
 
-      <div class="line"></div>
+<!--      <div class="line"></div>-->
 
-      <div class="row-controller">
-        <div class="block">
-          手机号码:
-        </div>
-        <div>
-          {{phone}}
-        </div>
-      </div>
+<!--      <div class="row-controller">-->
+<!--        <div class="block">-->
+<!--          中文名:-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          {{nickname}}-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="line"></div>
+<!--      <div class="line"></div>-->
 
-      <div class="row-controller">
-        <div class="block">
-          邮箱:
-        </div>
-        <div>
-          {{email}}
-        </div>
-      </div>
+<!--      <div class="row-controller">-->
+<!--        <div class="block">-->
+<!--          英文名:-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          {{name_en}}-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="line"></div>
+<!--      <div class="line"></div>-->
 
-      <div class="row-controller">
-        <div class="block">
-          生日:
-        </div>
-        <div>
-          {{birth}}
-        </div>
-      </div>
+<!--      <div class="row-controller">-->
+<!--        <div class="block">-->
+<!--          性别:-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          {{sex == 0 ? '男' : '女'}}-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="line"></div>
+<!--      <div class="line"></div>-->
 
-      <div class="row-controller" @click="goToMyAddress">
-        <div class="block">
-          我的收货地址
-        </div>
-        <div>
-          <img src="../../../assets/right-arrow.png" style="height: 20px;width: 20px;" alt="">
-        </div>
-      </div>
+<!--&lt;!&ndash;      <div class="row-controller">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="block">&ndash;&gt;-->
+<!--&lt;!&ndash;          年龄:&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div>&ndash;&gt;-->
+<!--&lt;!&ndash;          {{years}}&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
 
-      <div class="line"></div>
+<!--      <div class="line"></div>-->
 
-      <div class="row-controller" @click="goToMyOrder">
-        <div class="block">
-          我的订单
-        </div>
-        <div>
-          <img src="../../../assets/right-arrow.png" style="height: 20px;width: 20px;" alt="">
-        </div>
-      </div>
+<!--      <div class="row-controller">-->
+<!--        <div class="block">-->
+<!--          手机号码:-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          {{phone}}-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div style="margin-top: 20px;width: 100%;text-align: center;padding-bottom: 60px;">
-        <van-button hairline type="default" @click="goToUpdateInfo">去完善信息</van-button>
-      </div>
+<!--      <div class="line"></div>-->
+
+<!--      <div class="row-controller">-->
+<!--        <div class="block">-->
+<!--          邮箱:-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          {{email}}-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="line"></div>-->
+
+<!--      <div class="row-controller">-->
+<!--        <div class="block">-->
+<!--          生日:-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          {{birth}}-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="line"></div>-->
+
+<!--      <div class="row-controller" @click="goToMyAddress">-->
+<!--        <div class="block">-->
+<!--          我的收货地址-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <img src="../../../assets/right-arrow.png" style="height: 20px;width: 20px;" alt="">-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="line"></div>-->
+
+<!--      <div class="row-controller" @click="goToMyOrder">-->
+<!--        <div class="block">-->
+<!--          我的订单-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <img src="../../../assets/right-arrow.png" style="height: 20px;width: 20px;" alt="">-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div style="margin-top: 20px;width: 100%;text-align: center;padding-bottom: 60px;">-->
+<!--        <van-button hairline type="default" @click="goToUpdateInfo">去完善信息</van-button>-->
+<!--      </div>-->
 
     </div>
 </template>
@@ -318,15 +379,21 @@
   }
 
   .nav-controller{
-    padding: 20px 10px;
+    font-size: 13px;
+    padding: 10px 10px;
     background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
     .left{
       display: flex;
       align-items: center;
+    }
+    .right{
+      img{
+        width: 10px;
+        height: 10px;
+      }
     }
   }
 </style>

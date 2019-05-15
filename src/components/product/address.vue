@@ -34,6 +34,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    border-radius: 16px;
     .address-img{
       img{
         width: 30px;

@@ -12,7 +12,10 @@ import NoNavIndex from '@/page/noNavIndex'
 import AddressList from '@/page/pages/my/address/list'
 import ProductInfo from '@/page/pages/news/info'
 import MyOrderList from '@/page/pages/order/index'
-import ConfirmProduct from '@/page/pages/news/confirm'
+import ConfirmProduct from '@/page/pages/service/page/confirm'
+import proInfo from '@/page/pages/service/page/info'
+import orderConfirm from '@/page/pages/service/page/confirm'
+import newsInfo from '@/page/pages/news/newsInfo'
 
 Vue.use(Router)
 
@@ -61,16 +64,24 @@ export default new Router({
           component: AddressList
         },
         {
-          path:'product/info',
-          component: ProductInfo
-        },
-        {
           path:'product/confirm',
           component: ConfirmProduct
         },
         {
           path:'order/list',
           component: MyOrderList
+        },
+        {
+          path:'service/info/:id',
+          component: proInfo
+        },
+        {
+          path: 'service/confirm/:id',
+          component: ConfirmProduct
+        },
+        {
+          path: 'news/info/:id',
+          component: newsInfo
         }
       ]
     },
