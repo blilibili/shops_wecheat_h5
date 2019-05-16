@@ -26,7 +26,7 @@
               </div>
             </div>
             <div class="line"></div>
-            <div class="article-box">
+            <div class="article-box" @click="goToNewsInfo">
               <div class="img">
                 <img src="../../../assets/01.jpg" alt="">
               </div>
@@ -47,7 +47,7 @@
               </div>
             </div>
             <div class="line"></div>
-            <div class="article-box">
+            <div class="article-box" @click="goToNewsInfo">
               <div class="img">
                 <img src="../../../assets/01.jpg" alt="">
               </div>

@@ -16,6 +16,7 @@ import ConfirmProduct from '@/page/pages/service/page/confirm'
 import proInfo from '@/page/pages/service/page/info'
 import orderConfirm from '@/page/pages/service/page/confirm'
 import newsInfo from '@/page/pages/news/newsInfo'
+import CartList from '@/page/pages/component/cart'
 
 Vue.use(Router)
 
@@ -82,6 +83,10 @@ export default new Router({
         {
           path: 'news/info/:id',
           component: newsInfo
+        },
+        {
+          path: 'cart/list',
+          component: CartList
         }
       ]
     },

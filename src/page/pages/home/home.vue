@@ -215,23 +215,23 @@
                 code: this.code
               };
 
-              requestGetUserInfo(data , this).then((res) => {
-
-                Toast.clear();
-                window.localStorage.setItem('nickname' , res.data.data.nickname);
-                window.localStorage.setItem('token' , 'Bearer ' + res.data.data.token);
-                this.nickname = res.data.data.nickname;
-                if(res.data.data.mobile == null){
-                  this.isShowBindMobile = true;
-                  window.localStorage.setItem('isBindPhone' , '0');
-                }else{
-                  window.localStorage.setItem('isBindPhone' , '1');
-                }
-                window.location.href = '/';
-                //store.dispatch('setUserNickname' , res.data.data.nickname);
-              })
+              // requestGetUserInfo(data , this).then((res) => {
+              //
+              //   Toast.clear();
+              //   window.localStorage.setItem('nickname' , res.data.data.nickname);
+              //   window.localStorage.setItem('token' , 'Bearer ' + res.data.data.token);
+              //   this.nickname = res.data.data.nickname;
+              //   if(res.data.data.mobile == null){
+              //     this.isShowBindMobile = true;
+              //     window.localStorage.setItem('isBindPhone' , '0');
+              //   }else{
+              //     window.localStorage.setItem('isBindPhone' , '1');
+              //   }
+              //   window.location.href = '/';
+              //   //store.dispatch('setUserNickname' , res.data.data.nickname);
+              // })
             }else{
-              this.loginHandler()
+              // this.loginHandler()
             }
           }else{
             if(window.localStorage.getItem('isBindPhone') == '0'){

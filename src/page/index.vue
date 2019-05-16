@@ -11,6 +11,9 @@
         >
           <van-tabbar-item icon="wap-home" to="/home">首页</van-tabbar-item>
           <van-tabbar-item icon="hot-sale-o" to="/news">文章</van-tabbar-item>
+          <van-tabbar-item>
+            <img src="../assets/plus.png" style="width: 25px;height: 25px;" alt="">
+          </van-tabbar-item>
           <van-tabbar-item icon="shopping-cart-o" to="/service">服务</van-tabbar-item>
           <van-tabbar-item icon="contact" to="/my">个人中心</van-tabbar-item>
         </van-tabbar>

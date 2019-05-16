@@ -30,6 +30,7 @@
         name: "index",
         data(){
           return {
+            searchName: '',
             activeIndex: 0,
             typeList:[
               {

@@ -1,7 +1,11 @@
 <template>
   <div class="cart-page">
-    <div v-if="cartLen">
-      <div style="width: 100%;height: 10px;"></div>
+    <div class="bg-color"></div>
+    <div v-if="cartLen" style="position: relative;z-index: 2;">
+      <div class="cart-title">
+        <div style="font-weight: bold;">购物车</div>
+        <div>共74件宝贝</div>
+      </div>
       <div class="card-section" :style="index != 0?'margin-top:10px;':''" v-for="(item , index) in cartList">
         <div class="pro-title">
           <div style="display: flex;align-items: center;">
@@ -11,7 +15,7 @@
         </div>
         <div class="pro-content" v-if="im.product" v-for="(im , idx) in item.cart" @click="goToProductInfo(im.product.product_id)" >
           <div class="img-controller">
-            <img src="../../../assets/01.jpg" alt="">
+            <img src="https://img.alicdn.com/imgextra/https://img.alicdn.com/imgextra/i4/3166931255/O1CN01hr1n3v1L8paZVgC8R_!!3166931255.jpg_430x430q90.jpg" alt="">
           </div>
           <div class="desc-controller">
             <div class="name">
@@ -32,6 +36,14 @@
         <div class="pro-footer" v-if="item.product">
           共{{item.product.length}}件商品 合计: ¥ {{item.product_amount}}
         </div>
+
+        <van-goods-action>
+          <van-goods-action-big-btn
+            primary
+            text="结算"
+            @click="goToCal"
+          />
+        </van-goods-action>
       </div>
     </div>
 
@@ -45,29 +57,60 @@
         name: "index",
         data(){
           return {
-            cartLen:0,
-            cartList:[],
+            cartLen:1,
+            cartList:[
+              {
+                seller_name: '阿里大药房',
+                cart: [
+                  {
+                    product:{
+                      product_id: 1,
+                      product_name: '善存药片',
+                      product_price: 19.9,
+                      product_amount: 19.9
+                    },
+                    product_number: 1,
+                  }
+                ]
+              }
+            ],
             imageURL:'../../../assets/01.jpg'
           }
         },
         mounted() {
-          requestGetCartList({} , this).then((res) => {
-            this.cartList = res.data.data;
-            this.cartLen = res.data.data.length;
-          })
+          // requestGetCartList({} , this).then((res) => {
+          //   this.cartList = res.data.data;
+          //   this.cartLen = res.data.data.length;
+          // })
         },
         methods:{
+          goToCal(){
+            this.$router.replace('/service/confirm/1')
+          },
           goToProductInfo(productId){
-            this.$router.push('/product/info?proId=' + productId)
+            this.$router.push('/service/info/' + productId)
           }
         }
     }
 </script>
 
 <style scoped lang="scss">
+  .bg-color{
+    position: absolute;
+    background-color: rgb(235,112,45);
+    width: 100%;
+    height: 27%;
+    z-index: 1;
+  }
   .cart-page{
     height: 100vh;
     overflow: auto;
+    background-color: rgb(239,239,239);
+    .cart-title{
+      width: 90%;
+      margin: 10px auto;
+      color: white;
+    }
   }
   .card-section{
     width: 90%;
@@ -87,6 +130,7 @@
       .img-controller{
         width: 45%;
         background: #4f4f4f;
+        height: 180px;
         img{
           opacity: .9;
           width: 100%;

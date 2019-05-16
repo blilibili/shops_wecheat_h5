@@ -289,12 +289,12 @@
         methods:{
           initData(){
             this.nickname = window.localStorage.getItem('nickname') || ''
-            requestGetMemberInfo({} , this).then((res) => {
-              this.name_en = res.data.data.name_en
-              this.sex = res.data.data.sex
-              this.email = res.data.data.email
-              this.birth = res.data.data.birthday
-            })
+            // requestGetMemberInfo({} , this).then((res) => {
+            //   this.name_en = res.data.data.name_en
+            //   this.sex = res.data.data.sex
+            //   this.email = res.data.data.email
+            //   this.birth = res.data.data.birthday
+            // })
           },
           goToUpdateInfo(){
             this.$router.push('/customerinfo')

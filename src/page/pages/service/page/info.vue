@@ -158,11 +158,18 @@
         :hide-stock="sku.hide_stock"
         :quota="quota"
         @add-cart="onAddCartClicked"
-      />
+      >
+        <template slot="sku-actions" slot-scope="props">
+          <div style="width: 100%;">
+            <van-button type="warning" style="width: 100%;" @click="addIntoCartHandler">确定</van-button>
+          </div>
+        </template>
+      </van-sku>
     </div>
 </template>
 
 <script>
+    import { Toast } from 'vant';
     export default {
         name: "info",
         data(){
@@ -228,8 +235,14 @@
           }
         },
         methods:{
+          addIntoCartHandler(){
+            Toast('已添加到购物车~');
+            this.showBase = false
+          },
           onClickMiniBtn(){},
-          myCart(){},
+          myCart(){
+            this.$router.replace('/cart/list')
+          },
           addInCart(){
             this.showBase = true
           },
